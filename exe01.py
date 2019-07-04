@@ -10,8 +10,13 @@ def exe01(lista):
 			qtd += 1
 	print('Qtd. ocorrencias 1o elem.: {}'.format(qtd))
 	
-	print('Media: {}'.format(sum(lista) / len(lista)))
-	print('Mais proximo da media: {}'.format(0))
+	media = round(sum(lista) / len(lista), 2)
+	print('Media: {}'.format(media))
+	
+	mais_proximo = []
+	for n in lista:
+		mais_proximo.append(round(abs(media - n), 2))
+	print('Mais proximo da media: {}'.format(lista[mais_proximo.index(min(mais_proximo))]))
 	
 	total_negativos = 0
 	for n in lista:
@@ -25,5 +30,5 @@ def exe01(lista):
 		if (contador[key] > 1):
 			print(key , ':', contador[key])
 
-lista = [-4, -1, -3, -3, 0, 1, 1, 1, 2, 4, 7, 7, 8, 9, 12, -13, -17]	
+lista = [-13, -17, -9, -9, -4, -1, -3, -3, 0, 1, 1, 1, 2, 4, 7, 7, 8, 9, 10, 10, 12, 16, 23]	
 exe01(lista)
